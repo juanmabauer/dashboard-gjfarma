@@ -16,32 +16,33 @@ let moviesInDB = {
 /* <!-- Total awards --> */
 
 let totalAwards = {
-    title:' Total awards', 
+    title:' Users quantity', 
     color:'success', 
     cuantity: '',
-    icon:'fa-award'
+    icon:'fa-user-check'
 }
 
 /* <!-- Actors quantity --> */
 
 let actorsQuantity = {
-    title:'Actors quantity' ,
+    title:'Products quantity' ,
     color:'warning',
     cuantity:'',
-    icon:'fa-user-check'
+    icon:'fa-clipboard-list'
 }
 
 let cartProps = [moviesInDB, totalAwards, actorsQuantity];
 
 function ContentRowMovies(){
-    const [products, setProducts] = useState(actorsQuantity)
+    const [products, setProducts] = useState([])
     const [users, setUsers] = useState([])
 
     useEffect(() => {
         fetch('http://localhost:3001/api/products')
         .then(response => response.json())
         .then(data => {
-            setProducts({cuantity: data.meta.total})
+            cartProps[2].cuantity = data.meta.total;
+            setProducts();
         })
         .catch(error => console.log(error))
     }, []);
@@ -50,7 +51,8 @@ function ContentRowMovies(){
         fetch('http://localhost:3001/api/users')
         .then(response => response.json())
         .then(data => {
-            totalAwards.cuantity = (data.meta.total)
+            cartProps[1].cuantity = data.meta.total;
+            setUsers();
         })
         .catch(error => console.log(error))
     }, []);
