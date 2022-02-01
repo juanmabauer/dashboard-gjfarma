@@ -3,15 +3,16 @@ import image from '../assets/images/logo-gjfarma.jpg';
 import ContentWrapper from './ContentWrapper';
 import CategoriesInDb from './CategoriesInDb';
 import LastProductInDb from './LastProductInDb';
-import ContentRowCart from './ContentRowCart';
+import Chart from './Chart';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
+import '../index.css'
 
 function SideBar(){
     return(
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul className="navbar-nav bg-gradient sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
@@ -53,9 +54,9 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowCart">
+                <Link className="nav-link" to="/Chart">
                         <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
+                        <span>Tabla de productos</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
@@ -89,8 +90,8 @@ function SideBar(){
                 <Route path="/LastProductInDb">
                     <LastProductInDb />
                 </Route>
-                <Route path="/ContentRowCart">
-                    <ContentRowCart />
+                <Route path="/Chart">
+                    <Chart />
                 </Route>
                 <Route component={NotFound} />
             </Switch>

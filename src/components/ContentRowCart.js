@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react';
 
 let productsInDB = {
     title: 'Total de productos',
-    color: 'primary', 
+    color: 'danger', 
     quantity: '',
     icon: 'fa-clipboard-list'
 }
@@ -12,7 +12,7 @@ let productsInDB = {
 
 let usersInDB = {
     title: 'Total de usuarios', 
-    color:'success', 
+    color:'danger', 
     quantity: '',
     icon:'fa-user-check'
 }
@@ -20,7 +20,7 @@ let usersInDB = {
 
 let categoriesInDB = {
     title:'Total de categorías' ,
-    color:'warning',
+    color:'danger',
     quantity:'',
     icon:'fa-clipboard-list'
 }

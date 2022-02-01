@@ -7,30 +7,30 @@ function CategoriesInDb() {
 
   useEffect(() => {
     fetch('http://localhost:3001/api/categories')
-    .then(response => response.json())
-    .then(data => {
+      .then(response => response.json())
+      .then(data => {
         setCategories(data.data);
-    })
-    .catch(error => console.log(error))
-}, []);
-  
+      })
+      .catch(error => console.log(error))
+  }, []);
+
   return (
     <div className="col-lg-6 mb-4">
       <div className="card shadow mb-4">
         <div className="card-header py-3">
           <h5 className="m-0 font-weight-bold text-gray-800">
-            Categorías en la base de datos
+            Categorías en la base de datos (Cantidad de productos)
           </h5>
         </div>
         <div className="card-body">
           <div className="row">
             {
-              categories.map((category,i) =>(
+              categories.map((category, i) => (
                 <div className="col-lg-6 mb-4" key={category + i} >
-              <div className="card bg-dark text-white shadow">
-                <div className="card-body">{category.name} </div>
-              </div>
-            </div>
+                  <div className="card bg-dark text-white shadow">
+                    <div className="card-body">{category.name} ({category.products}) </div>
+                  </div>
+                </div>
               ))
             }
           </div>

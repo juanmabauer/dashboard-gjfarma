@@ -2,6 +2,7 @@ import React from 'react';
 import ContentRowCenter from './ContentRowCenter';
 import ContentRowCart from './ContentRowCart';
 import Chart from './Chart';
+import '../index.css'
 
 function ContentRowTop(){
     return(
