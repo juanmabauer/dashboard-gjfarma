@@ -4,25 +4,22 @@ import ContentRowCart from './ContentRowCart';
 import Chart from './Chart';
 import '../index.css'
 
-function ContentRowTop(){
-    return(
-        <React.Fragment>
-				{/*<!-- Content Row Top -->*/}
-				<div className="container-fluid">
-					<div className="d-sm-flex aligns-items-center justify-content-between mb-4">
-						<h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
-					</div>
-				
-					{/*<!-- Content Row Movies-->*/}
-					<ContentRowCart />
-					<ContentRowCenter />
-					<Chart />
-	
-				</div>
-				{/*<!--End Content Row Top-->*/}
+function ContentRowTop() {
+	return (
+		<React.Fragment>
 
-        </React.Fragment>
-    )
+			<div className="container-fluid">
+				<div className="d-sm-flex aligns-items-center justify-content-between mb-4">
+					<h1 className="h3 mb-0 text-gray-800">Dashboard</h1>
+				</div>
+				<ContentRowCart />
+				<ContentRowCenter />
+				<Chart />
+
+			</div>
+
+		</React.Fragment>
+	)
 
 }
 export default ContentRowTop;
