@@ -29,15 +29,6 @@ function Chart (){
                                 <th>Stock</th>
                             </tr>
                         </thead>
-                        <tfoot>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Categoría</th>
-                                <th>Marca</th>
-                                <th>Precio</th>
-                                <th>Stock</th>
-                            </tr>
-                        </tfoot>
                         <tbody>
                             {
                             products.map( ( product , i) => {
